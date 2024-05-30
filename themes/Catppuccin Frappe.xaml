@@ -143,7 +143,7 @@
         x:Key="SeparatorStyle"
         BasedOn="{StaticResource BaseSeparatorStyle}"
         TargetType="{x:Type Rectangle}">
-        <Setter Property="Fill" Value="#303446  " />
+        <Setter Property="Fill" Value="#303446" />
         <Setter Property="Height" Value="2" />
         <Setter Property="Margin" Value="10,0,10,8" />
     </Style>
