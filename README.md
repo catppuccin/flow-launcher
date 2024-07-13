@@ -36,9 +36,8 @@
 
 ## Usage
 
-1. Clone this repository locally
-2. Copy your desired flavour's `Catppuccin-*.xaml` file from the `themes` folder to `%appdata%/FlowLauncher/Themes` folder (Paste this address in Windows Explorer).
-3. Open the Flow Launcher settings and select the flavour.
+1. Copy your desired flavour `Catppuccin-*.xaml` file from the [themes](./themes) folder to `%appdata%/FlowLauncher/Themes` (Paste this address in Windows Explorer).
+2. Open the Flow Launcher settings and select the flavour.
 
 ## 💝 Thanks to
 
