@@ -1,3 +1,10 @@
+---
+whiskers:
+  version: "2.3.0"
+  matrix:
+    - flavor
+  filename: "themes/Catppuccin {{ flavor.identifier | capitalize }}.xaml"
+---
 <ResourceDictionary
     xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
     xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
@@ -10,15 +17,15 @@
         x:Key="ItemGlyph"
         BasedOn="{StaticResource BaseGlyphStyle}"
         TargetType="{x:Type TextBlock}">
-        <Setter Property="Foreground" Value="#c6d0f5" />
+        <Setter Property="Foreground" Value="#{{ text.hex }}" />
     </Style>
     <Style
         x:Key="QueryBoxStyle"
         BasedOn="{StaticResource BaseQueryBoxStyle}"
         TargetType="{x:Type TextBox}">
         <Setter Property="FontSize" Value="24" />
-        <Setter Property="Foreground" Value="#c6d0f5" />
-        <Setter Property="CaretBrush" Value="#ca9ee6" />
+        <Setter Property="Foreground" Value="#{{ text.hex }}" />
+        <Setter Property="CaretBrush" Value="#{{ mauve.hex }}" />
         <Setter Property="FontSize" Value="26" />
         <Setter Property="Height" Value="42" /> 
         <Setter Property="Padding" Value="0,0,0,0" />
@@ -27,8 +34,8 @@
         x:Key="QuerySuggestionBoxStyle"
         BasedOn="{StaticResource BaseQuerySuggestionBoxStyle}"
         TargetType="{x:Type TextBox}">
-        <Setter Property="Background" Value="#292c3c" />
-        <Setter Property="Foreground" Value="#51576d" />
+        <Setter Property="Background" Value="#{{ mantle.hex }}" />
+        <Setter Property="Foreground" Value="#{{ surface1.hex }}" />
         <Setter Property="FontSize" Value="26" />
         <Setter Property="Height" Value="42" />
         <Setter Property="Padding" Value="0,0,0,0" />
@@ -38,9 +45,9 @@
         BasedOn="{StaticResource BaseWindowBorderStyle}"
         TargetType="{x:Type Border}">
         <Setter Property="BorderThickness" Value="2" />
-        <Setter Property="BorderBrush" Value="#414559" />
+        <Setter Property="BorderBrush" Value="#{{ if(cond=flavor.dark, t=surface0.hex, f=surface1.hex) }}" />
         <Setter Property="CornerRadius" Value="12" />
-        <Setter Property="Background" Value="#292c3c" />
+        <Setter Property="Background" Value="#{{ mantle.hex }}" />
     </Style>
     <Style
         x:Key="WindowStyle"
@@ -54,7 +61,7 @@
         x:Key="PendingLineStyle"
         BasedOn="{StaticResource BasePendingLineStyle}"
         TargetType="{x:Type Line}">
-        <Setter Property="Stroke" Value="#a6d189" />
+        <Setter Property="Stroke" Value="#{{ green.hex }}" />
     </Style>
 
     <!--  Item Style  -->
@@ -62,36 +69,36 @@
         x:Key="ItemTitleStyle"
         BasedOn="{StaticResource BaseItemTitleStyle}"
         TargetType="{x:Type TextBlock}">
-        <Setter Property="Foreground" Value="#a5adce" />
+        <Setter Property="Foreground" Value="#{{ if(cond=flavor.dark, t=subtext0.hex, f=text.hex) }}" />
     </Style>
     <Style
         x:Key="ItemSubTitleStyle"
         BasedOn="{StaticResource BaseItemSubTitleStyle}"
         TargetType="{x:Type TextBlock}">
-        <Setter Property="Foreground" Value="#737994" />
+        <Setter Property="Foreground" Value="#{{ if(cond=flavor.dark, t=overlay0.hex, f=text.hex) }}" />
         <Setter Property="FontSize" Value="13" />
     </Style>
     <Style
         x:Key="ItemNumberStyle"
         BasedOn="{StaticResource BaseItemNumberStyle}"
         TargetType="{x:Type TextBlock}">
-        <Setter Property="Foreground" Value="#51576d" />
+        <Setter Property="Foreground" Value="#{{ surface1.hex }}" />
     </Style>
     <Style
         x:Key="ItemTitleSelectedStyle"
         BasedOn="{StaticResource BaseItemTitleSelectedStyle}"
         TargetType="{x:Type TextBlock}">
         <Setter Property="Cursor" Value="Arrow" />
-        <Setter Property="Foreground" Value="#c6d0f5" />
+        <Setter Property="Foreground" Value="#{{ text.hex }}" />
     </Style>
     <Style
         x:Key="ItemSubTitleSelectedStyle"
         BasedOn="{StaticResource BaseItemSubTitleSelectedStyle}"
         TargetType="{x:Type TextBlock}">
         <Setter Property="Cursor" Value="Arrow" />
-        <Setter Property="Foreground" Value="#8caaee" />
+        <Setter Property="Foreground" Value="#{{ blue.hex }}" />
     </Style>
-    <SolidColorBrush x:Key="ItemSelectedBackgroundColor">#303446</SolidColorBrush>
+    <SolidColorBrush x:Key="ItemSelectedBackgroundColor">#{{ if(cond=flavor.dark, t=base.hex, f=surface0.hex) }}</SolidColorBrush>
     <CornerRadius x:Key="ItemRadius">8</CornerRadius>
     <Thickness x:Key="ItemMargin">10 0 10 0</Thickness>
     <Style
@@ -101,16 +108,16 @@
         <Setter Property="Cursor" Value="Arrow" />
     </Style>
     <Style x:Key="HighlightStyle">
-        <Setter Property="Inline.Foreground" Value="#ca9ee6" />
+        <Setter Property="Inline.Foreground" Value="#{{ mauve.hex }}" />
         <Setter Property="Inline.FontWeight" Value="Bold" />
     </Style>
     <Style x:Key="ItemHotkeyStyle" TargetType="{x:Type TextBlock}">
         <Setter Property="FontSize" Value="13" />
-        <Setter Property="Foreground" Value="#737994" />
+        <Setter Property="Foreground" Value="#{{ overlay0.hex }}" />
     </Style>
     <Style x:Key="ItemHotkeySelectedStyle" TargetType="{x:Type TextBlock}">
         <Setter Property="FontSize" Value="13" />
-        <Setter Property="Foreground" Value="#8caaee" />
+        <Setter Property="Foreground" Value="#{{ blue.hex }}" />
     </Style>
     <!--  button style in the middle of the scrollbar  -->
     <Style
@@ -126,7 +133,7 @@
             <Setter.Value>
                 <ControlTemplate TargetType="{x:Type Thumb}">
                     <Border
-                        Background="#414559"
+                        Background="#{{ surface0.hex }}"
                         BorderBrush="Transparent"
                         BorderThickness="0"
                         CornerRadius="2"
@@ -143,7 +150,7 @@
         x:Key="SeparatorStyle"
         BasedOn="{StaticResource BaseSeparatorStyle}"
         TargetType="{x:Type Rectangle}">
-        <Setter Property="Fill" Value="#303446" />
+        <Setter Property="Fill" Value="#{{ if(cond=flavor.dark, t=base.hex, f=surface0.hex) }}" />
         <Setter Property="Height" Value="2" />
         <Setter Property="Margin" Value="10,0,10,8" />
     </Style>
@@ -151,7 +158,7 @@
         x:Key="SearchIconStyle"
         BasedOn="{StaticResource BaseSearchIconStyle}"
         TargetType="{x:Type Path}">
-        <Setter Property="Fill" Value="#51576d" />
+        <Setter Property="Fill" Value="#{{ if(cond=flavor.dark, t=surface1.hex, f=text.hex) }}" />
         <Setter Property="Width" Value="32" />
         <Setter Property="Height" Value="32" />
     </Style>
@@ -159,36 +166,36 @@
         x:Key="ClockBox"
         BasedOn="{StaticResource BaseClockBox}"
         TargetType="{x:Type TextBlock}">
-        <Setter Property="Foreground" Value="#8caaee" />
+        <Setter Property="Foreground" Value="#{{ if(cond=flavor.dark, t=blue.hex, f=text.hex) }}" />
     </Style>
     <Style
         x:Key="DateBox"
         BasedOn="{StaticResource BaseDateBox}"
         TargetType="{x:Type TextBlock}">
-        <Setter Property="Foreground" Value="#8caaee" />
+        <Setter Property="Foreground" Value="#{{ if(cond=flavor.dark, t=blue.hex, f=text.hex) }}" />
     </Style>
     <Style
         x:Key="PreviewBorderStyle"
         BasedOn="{StaticResource BasePreviewBorderStyle}"
         TargetType="{x:Type Border}">
-        <Setter Property="BorderBrush" Value="#303446" />
+        <Setter Property="BorderBrush" Value="#{{ base.hex }}" />
     </Style>
     <Style
         x:Key="PreviewItemTitleStyle"
         BasedOn="{StaticResource BasePreviewItemTitleStyle}"
         TargetType="{x:Type TextBlock}">
-        <Setter Property="Foreground" Value="#8caaee" />
+        <Setter Property="Foreground" Value="#{{ blue.hex }}" />
     </Style>
     <Style
         x:Key="PreviewItemSubTitleStyle"
         BasedOn="{StaticResource BasePreviewItemSubTitleStyle}"
         TargetType="{x:Type TextBlock}">
-        <Setter Property="Foreground" Value="#51576d" />
+        <Setter Property="Foreground" Value="#{{ surface1.hex }}" />
     </Style>
     <Style
         x:Key="PreviewGlyph"
         BasedOn="{StaticResource BasePreviewGlyph}"
         TargetType="{x:Type TextBlock}">
-        <Setter Property="Foreground" Value="#8caaee" />
+        <Setter Property="Foreground" Value="#{{ blue.hex }}" />
     </Style>
 </ResourceDictionary>
