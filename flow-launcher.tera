@@ -45,7 +45,7 @@ whiskers:
         BasedOn="{StaticResource BaseWindowBorderStyle}"
         TargetType="{x:Type Border}">
         <Setter Property="BorderThickness" Value="2" />
-        <Setter Property="BorderBrush" Value="#{{ surface0.hex }}" />
+        <Setter Property="BorderBrush" Value="#{{ if(cond=flavor.dark, t=surface0.hex, f=surface1.hex) }}" />
         <Setter Property="CornerRadius" Value="12" />
         <Setter Property="Background" Value="#{{ mantle.hex }}" />
     </Style>
@@ -69,13 +69,13 @@ whiskers:
         x:Key="ItemTitleStyle"
         BasedOn="{StaticResource BaseItemTitleStyle}"
         TargetType="{x:Type TextBlock}">
-        <Setter Property="Foreground" Value="#{{ subtext0.hex }}" />
+        <Setter Property="Foreground" Value="#{{ if(cond=flavor.dark, t=subtext0.hex, f=text.hex) }}" />
     </Style>
     <Style
         x:Key="ItemSubTitleStyle"
         BasedOn="{StaticResource BaseItemSubTitleStyle}"
         TargetType="{x:Type TextBlock}">
-        <Setter Property="Foreground" Value="#{{ overlay0.hex }}" />
+        <Setter Property="Foreground" Value="#{{ if(cond=flavor.dark, t=overlay0.hex, f=text.hex) }}" />
         <Setter Property="FontSize" Value="13" />
     </Style>
     <Style
@@ -98,7 +98,7 @@ whiskers:
         <Setter Property="Cursor" Value="Arrow" />
         <Setter Property="Foreground" Value="#{{ blue.hex }}" />
     </Style>
-    <SolidColorBrush x:Key="ItemSelectedBackgroundColor">#{{ base.hex }}</SolidColorBrush>
+    <SolidColorBrush x:Key="ItemSelectedBackgroundColor">#{{ if(cond=flavor.dark, t=base.hex, f=surface0.hex) }}</SolidColorBrush>
     <CornerRadius x:Key="ItemRadius">8</CornerRadius>
     <Thickness x:Key="ItemMargin">10 0 10 0</Thickness>
     <Style
@@ -150,7 +150,7 @@ whiskers:
         x:Key="SeparatorStyle"
         BasedOn="{StaticResource BaseSeparatorStyle}"
         TargetType="{x:Type Rectangle}">
-        <Setter Property="Fill" Value="#{{ base.hex }}" />
+        <Setter Property="Fill" Value="#{{ if(cond=flavor.dark, t=base.hex, f=surface0.hex) }}" />
         <Setter Property="Height" Value="2" />
         <Setter Property="Margin" Value="10,0,10,8" />
     </Style>
@@ -158,7 +158,7 @@ whiskers:
         x:Key="SearchIconStyle"
         BasedOn="{StaticResource BaseSearchIconStyle}"
         TargetType="{x:Type Path}">
-        <Setter Property="Fill" Value="#{{ surface1.hex }}" />
+        <Setter Property="Fill" Value="#{{ if(cond=flavor.dark, t=surface1.hex, f=text.hex) }}" />
         <Setter Property="Width" Value="32" />
         <Setter Property="Height" Value="32" />
     </Style>
