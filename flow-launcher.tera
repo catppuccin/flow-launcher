@@ -166,13 +166,13 @@ whiskers:
         x:Key="ClockBox"
         BasedOn="{StaticResource BaseClockBox}"
         TargetType="{x:Type TextBlock}">
-        <Setter Property="Foreground" Value="#{{ blue.hex }}" />
+        <Setter Property="Foreground" Value="#{{ if(cond=flavor.dark, t=blue.hex, f=text.hex) }}" />
     </Style>
     <Style
         x:Key="DateBox"
         BasedOn="{StaticResource BaseDateBox}"
         TargetType="{x:Type TextBlock}">
-        <Setter Property="Foreground" Value="#{{ blue.hex }}" />
+        <Setter Property="Foreground" Value="#{{ if(cond=flavor.dark, t=blue.hex, f=text.hex) }}" />
     </Style>
     <Style
         x:Key="PreviewBorderStyle"
