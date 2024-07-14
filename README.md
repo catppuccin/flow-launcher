@@ -37,13 +37,14 @@
 ## Usage
 
 1. Download your preferred flavor from [`themes/`](./themes).
-3. Open Flow Launcher's Settings window, select **Appearance** on the sidebar, and click the "Open Theme Folder" button at the bottom.
-4. Move your theme file downloaded in Step 1 to this directory, and restart Flow Launcher.
-5. Again in Flow Launcher's Settings window, select **Appearance** on the sidebar, and select your Catppuccin flavor from the list of themes.
+2. Open Flow Launcher's Settings window, select **Appearance** on the sidebar, and click the "Open Theme Folder" button at the bottom.
+3. Move your theme file downloaded in Step 1 to this directory, and restart Flow Launcher.
+4. Again in Flow Launcher's Settings window, select **Appearance** on the sidebar, and select your Catppuccin flavor from the list of themes.
 
 ## 💝 Thanks to
 
 - [Syndrizzle](https://github.com/syndrizzle)
+- [uncenter](https://github.com/uncenter)
 
 &nbsp;
 
