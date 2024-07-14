@@ -36,8 +36,10 @@
 
 ## Usage
 
-1. Copy your desired flavour `Catppuccin-*.xaml` file from the [themes](./themes) folder to `%appdata%/FlowLauncher/Themes` (Paste this address in Windows Explorer).
-2. Open the Flow Launcher settings and select the flavour.
+1. Download your preferred flavor from [`themes/`](./themes).
+3. Open Flow Launcher's Settings window, select **Appearance** on the sidebar, and click the "Open Theme Folder" button at the bottom.
+4. Move your theme file downloaded in Step 1 to this directory, and restart Flow Launcher.
+5. Again in Flow Launcher's Settings window, select **Appearance** on the sidebar, and select your Catppuccin flavor from the list of themes.
 
 ## 💝 Thanks to
 
