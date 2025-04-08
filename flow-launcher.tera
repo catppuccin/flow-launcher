@@ -44,7 +44,7 @@ whiskers:
         BasedOn="{StaticResource WindowBorderStyle}"
         TargetType="{x:Type Border}">
         <Setter Property="BorderBrush" Value="#{{ surface0.hex }}" />
-        <Setter Property="Background" Value="#{{ base.hex }}" />
+        <Setter Property="Background" Value="#{{ mantle.hex }}" />
     </Style>
 
     <!--  Item Style  -->
@@ -106,7 +106,7 @@ whiskers:
         <Setter Property="Fill" Value="#{{ overlay2.hex }}" />
     </Style>
     <Style x:Key="SearchIconPosition" BasedOn="{StaticResource SearchIconPosition}" TargetType="{x:Type Canvas}">
-        <Setter Property="Background" Value="#{{ base.hex }}" />
+        <Setter Property="Background" Value="#{{ mantle.hex }}" />
     </Style>
 
     <Style x:Key="ItemHotkeyStyle" TargetType="{x:Type TextBlock}">
@@ -134,7 +134,7 @@ whiskers:
         x:Key="PreviewBorderStyle"
         BasedOn="{StaticResource PreviewBorderStyle}"
         TargetType="{x:Type Border}">
-        <Setter Property="BorderBrush" Value="#{{ base.hex }}" />
+        <Setter Property="BorderBrush" Value="#{{ mantle.hex }}" />
     </Style>
     <Style
         x:Key="PreviewItemTitleStyle"
