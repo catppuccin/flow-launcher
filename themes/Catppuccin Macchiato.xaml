@@ -36,7 +36,7 @@
         BasedOn="{StaticResource WindowBorderStyle}"
         TargetType="{x:Type Border}">
         <Setter Property="BorderBrush" Value="#363a4f" />
-        <Setter Property="Background" Value="#24273a" />
+        <Setter Property="Background" Value="#1e2030" />
     </Style>
 
     <!--  Item Style  -->
@@ -98,7 +98,7 @@
         <Setter Property="Fill" Value="#939ab7" />
     </Style>
     <Style x:Key="SearchIconPosition" BasedOn="{StaticResource SearchIconPosition}" TargetType="{x:Type Canvas}">
-        <Setter Property="Background" Value="#24273a" />
+        <Setter Property="Background" Value="#1e2030" />
     </Style>
 
     <Style x:Key="ItemHotkeyStyle" TargetType="{x:Type TextBlock}">
@@ -126,7 +126,7 @@
         x:Key="PreviewBorderStyle"
         BasedOn="{StaticResource PreviewBorderStyle}"
         TargetType="{x:Type Border}">
-        <Setter Property="BorderBrush" Value="#24273a" />
+        <Setter Property="BorderBrush" Value="#1e2030" />
     </Style>
     <Style
         x:Key="PreviewItemTitleStyle"
