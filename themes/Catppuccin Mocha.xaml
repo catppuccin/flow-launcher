@@ -97,9 +97,6 @@
         TargetType="{x:Type Path}">
         <Setter Property="Fill" Value="#9399b2" />
     </Style>
-    <Style x:Key="SearchIconPosition" BasedOn="{StaticResource SearchIconPosition}" TargetType="{x:Type Canvas}">
-        <Setter Property="Background" Value="#181825" />
-    </Style>
 
     <Style x:Key="ItemHotkeyStyle" TargetType="{x:Type TextBlock}">
         <Setter Property="Foreground" Value="#6c7086" />
