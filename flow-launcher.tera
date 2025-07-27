@@ -1,7 +1,7 @@
 ---
 accent: mauve
 whiskers:
-  version: "2.3.0"
+  version: "^2.3.0"
   matrix:
     - flavor
   filename: "themes/Catppuccin {{ flavor.identifier | capitalize }}.xaml"
@@ -13,6 +13,10 @@ whiskers:
     <ResourceDictionary.MergedDictionaries>
         <ResourceDictionary Source="pack://application:,,,/Themes/Win11Light.xaml" />
     </ResourceDictionary.MergedDictionaries>
+    <system:Boolean x:Key="ThemeBlurEnabled">True</system:Boolean>
+    <system:String x:Key="SystemBG">Auto</system:String>
+    <Color x:Key="LightBG">#{{mantle.hex}}</Color>
+    <Color x:Key="DarkBG">#{{mantle.hex}}</Color>
     <Style
         x:Key="ItemBulletSelectedStyle"
         BasedOn="{StaticResource ItemBulletSelectedStyle}"
@@ -31,6 +35,7 @@ whiskers:
         TargetType="{x:Type TextBox}">
         <Setter Property="Foreground" Value="#{{ text.hex }}" />
         <Setter Property="CaretBrush" Value="#{{ text.hex }}" />
+        <Setter Property="SelectionBrush" Value="#{{ flavor.colors[accent] | mix(color=base, amount=0.8) | get(key="hex") }}" />
     </Style>
     <Style
         x:Key="QuerySuggestionBoxStyle"
