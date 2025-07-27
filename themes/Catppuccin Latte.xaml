@@ -5,6 +5,10 @@
     <ResourceDictionary.MergedDictionaries>
         <ResourceDictionary Source="pack://application:,,,/Themes/Win11Light.xaml" />
     </ResourceDictionary.MergedDictionaries>
+    <system:Boolean x:Key="ThemeBlurEnabled">True</system:Boolean>
+    <system:String x:Key="SystemBG">Auto</system:String>
+    <Color x:Key="LightBG">#e6e9ef</Color>
+    <Color x:Key="DarkBG">#e6e9ef</Color>
     <Style
         x:Key="ItemBulletSelectedStyle"
         BasedOn="{StaticResource ItemBulletSelectedStyle}"
@@ -23,6 +27,7 @@
         TargetType="{x:Type TextBox}">
         <Setter Property="Foreground" Value="#4c4f69" />
         <Setter Property="CaretBrush" Value="#4c4f69" />
+        <Setter Property="SelectionBrush" Value="#9d5ef0" />
     </Style>
     <Style
         x:Key="QuerySuggestionBoxStyle"
